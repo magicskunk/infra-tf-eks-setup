@@ -3,7 +3,7 @@ terraform {
     organization = "magicskunk"
 
     workspaces {
-      name = "infra-tf-common-shared-cli"
+      name = "infra-tf-eks-setup-shared-cli"
     }
   }
 
@@ -19,6 +19,10 @@ terraform {
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = ">= 2.0.0"
+    }
+    helm = {
+      source  = "hashicorp/helm"
+      version = "2.8.0"
     }
   }
 
