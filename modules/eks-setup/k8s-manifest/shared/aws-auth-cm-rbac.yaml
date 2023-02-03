@@ -13,8 +13,22 @@ data:
       username: dejano
       groups:
         - system:masters
+        - system:bootstrappers
+        - system:nodes
+    - userarn: arn:aws:iam::847775666541:root
+      username: root
+      groups:
+        - system:masters
+        - system:bootstrappers
+        - system:nodes
   mapRoles: |
     - rolearn: arn:aws:iam::847775666541:role/kubernetes_admin
       username: kubernetes-admin
       groups:
         - system:masters
+    # enable access for nodes to the cluster
+    - rolearn: arn:aws:iam::847775666541:role/magicskunk_cluster_shared_node_role
+      groups:
+      - system:nodes
+      - system:bootstrappers
+      username: system:node:{{EC2PrivateDNSName}}
