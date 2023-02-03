@@ -11,5 +11,5 @@ terraform {
 data "aws_caller_identity" "current" {}
 
 resource "kubectl_manifest" "cluster_rbac" {
-  yaml_body = file("${path.module}/k8s-manifest/${var.env_code}/aws-eks-rbac.yaml")
+  yaml_body = file("${path.module}/k8s-manifest/${var.env_code}/aws-auth-cm-rbac.yaml")
 }

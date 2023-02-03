@@ -6,8 +6,6 @@ aws_region = {
   prod    = "eu-central-1"
 }
 
-primary_domain = "karambol.dev"
-
 cluster_name = {
   shared  = "magicskunk_cluster_shared"
   sandbox = "magicskunk_cluster_sandbox"
